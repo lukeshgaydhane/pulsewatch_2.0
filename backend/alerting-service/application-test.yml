@@ -1,0 +1,87 @@
+server:
+  port: 8084
+
+spring:
+  application:
+    name: alerting-service
+  
+  # Use H2 in-memory database for testing
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password: 
+    driver-class-name: org.h2.Driver
+  
+  # JPA Configuration
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+        format_sql: true
+  
+  # Disable RabbitMQ for testing
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: /
+  
+  # H2 Console for testing
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  
+  # Email Configuration (mock for testing)
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: test@example.com
+    password: test_password
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+# Actuator Configuration
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+  endpoint:
+    health:
+      show-details: always
+
+# Logging Configuration
+logging:
+  level:
+    com.pulsewatch.alerting: DEBUG
+    org.springframework.amqp: WARN
+    org.hibernate.SQL: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+
+# Alerting Service Configuration
+alerting:
+  gupshup:
+    api-key: test-api-key
+    api-url: https://api.gupshup.io/sm/api/v1/msg
+    source-number: +1234567890
+    app-name: pulsewatch-test
+  
+  thresholds:
+    cpu: 80
+    memory: 85
+  
+  rabbitmq:
+    queue:
+      name: alerts.queue
+      exchange: alerts.exchange
+      routing-key: alerts.routing.key 

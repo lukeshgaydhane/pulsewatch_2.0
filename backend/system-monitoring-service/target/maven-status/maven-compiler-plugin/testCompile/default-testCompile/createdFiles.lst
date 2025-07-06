@@ -1,0 +1,3 @@
+com\pulsewatch\monitoring\SystemMonitoringServiceApplicationTests.class
+com\pulsewatch\monitoring\dto\MetricsRequestTest.class
+com\pulsewatch\monitoring\logging\LoggingTest.class

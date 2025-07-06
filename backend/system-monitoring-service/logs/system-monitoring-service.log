@@ -1,0 +1,322 @@
+2025-07-06 14:13:59.842 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2025-07-06 14:13:59.904 [main] INFO  c.p.monitoring.logging.LoggingTest - Starting LoggingTest using Java 17 with PID 13796 (started by Admin in D:\Revino Solutions Pvt Ltd\Pulsewatch_2.0\backend\system-monitoring-service)
+2025-07-06 14:13:59.905 [main] DEBUG c.p.monitoring.logging.LoggingTest - Running with Spring Boot v3.2.4, Spring v6.1.5
+2025-07-06 14:13:59.907 [main] INFO  c.p.monitoring.logging.LoggingTest - No active profile set, falling back to 1 default profile: "default"
+2025-07-06 14:14:02.034 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-06 14:14:02.156 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 104 ms. Found 1 JPA repository interface.
+2025-07-06 14:14:03.669 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-06 14:14:03.999 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2025-07-06 14:14:04.187 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-07-06 14:14:04.898 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-06 14:14:04.993 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-07-06 14:14:05.508 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@57a982f9
+2025-07-06 14:14:05.512 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-07-06 14:14:05.619 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-06 14:14:07.343 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-06 14:14:07.501 [main] DEBUG org.hibernate.SQL - 
+    create table system_metrics (
+        id bigserial not null,
+        additional_data TEXT,
+        host varchar(255) not null,
+        metric_name varchar(255) not null,
+        metric_type varchar(255) not null check (metric_type in ('CPU','MEMORY','DISK','NETWORK')),
+        metric_value float(53) not null,
+        timestamp timestamp(6) not null,
+        unit varchar(255),
+        primary key (id)
+    )
+2025-07-06 14:14:07.545 [main] DEBUG org.hibernate.SQL - 
+    create index idx_timestamp 
+       on system_metrics (timestamp)
+2025-07-06 14:14:07.549 [main] DEBUG org.hibernate.SQL - 
+    create index idx_metric_type_timestamp 
+       on system_metrics (metric_type, timestamp)
+2025-07-06 14:14:07.551 [main] DEBUG org.hibernate.SQL - 
+    create index idx_host_timestamp 
+       on system_metrics (host, timestamp)
+2025-07-06 14:14:07.555 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-06 14:14:08.241 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-07-06 14:14:09.517 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-06 14:14:11.012 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 3 endpoint(s) beneath base path '/actuator'
+2025-07-06 14:14:11.155 [main] INFO  c.p.monitoring.logging.LoggingTest - Started LoggingTest in 12.033 seconds (process running for 14.133)
+2025-07-06 14:14:11.977 [main] DEBUG c.p.monitoring.logging.LoggingTest - This is a DEBUG message
+2025-07-06 14:14:11.978 [main] INFO  c.p.monitoring.logging.LoggingTest - This is an INFO message
+2025-07-06 14:14:11.978 [main] WARN  c.p.monitoring.logging.LoggingTest - This is a WARN message
+2025-07-06 14:14:11.978 [main] ERROR c.p.monitoring.logging.LoggingTest - This is an ERROR message
+2025-07-06 14:14:11.989 [main] INFO  c.p.m.controller.MetricsController - Controller logger test
+2025-07-06 14:14:11.990 [main] INFO  c.p.m.s.impl.MetricsServiceImpl - Service logger test
+2025-07-06 14:14:12.005 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.pulsewatch.monitoring.SystemMonitoringServiceApplicationTests]: SystemMonitoringServiceApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-07-06 14:14:12.045 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.pulsewatch.monitoring.SystemMonitoringServiceApplication for test class com.pulsewatch.monitoring.SystemMonitoringServiceApplicationTests
+2025-07-06 14:14:12.120 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-07-06 14:14:12.130 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-07-06 14:14:12.152 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-07-06 14:14:36.690 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2025-07-06 14:14:36.758 [main] INFO  c.p.m.SystemMonitoringServiceApplication - Starting SystemMonitoringServiceApplication using Java 17 with PID 5964 (D:\Revino Solutions Pvt Ltd\Pulsewatch_2.0\backend\system-monitoring-service\target\classes started by Admin in D:\Revino Solutions Pvt Ltd\Pulsewatch_2.0\backend\system-monitoring-service)
+2025-07-06 14:14:36.759 [main] DEBUG c.p.m.SystemMonitoringServiceApplication - Running with Spring Boot v3.2.4, Spring v6.1.5
+2025-07-06 14:14:36.759 [main] INFO  c.p.m.SystemMonitoringServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2025-07-06 14:14:37.544 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-06 14:14:37.600 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 50 ms. Found 1 JPA repository interface.
+2025-07-06 14:14:38.214 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8082 (http)
+2025-07-06 14:14:38.222 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8082"]
+2025-07-06 14:14:38.224 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-07-06 14:14:38.224 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2025-07-06 14:14:38.302 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-07-06 14:14:38.303 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1489 ms
+2025-07-06 14:14:38.585 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-06 14:14:38.645 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2025-07-06 14:14:38.669 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-07-06 14:14:38.856 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-06 14:14:38.874 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-07-06 14:14:39.170 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2adc1e84
+2025-07-06 14:14:39.171 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-07-06 14:14:39.208 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-06 14:14:39.988 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-06 14:14:40.076 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-06 14:14:40.319 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-07-06 14:14:40.705 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-06 14:14:41.242 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 3 endpoint(s) beneath base path '/actuator'
+2025-07-06 14:14:41.301 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8082"]
+2025-07-06 14:14:41.351 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8082 (http) with context path ''
+2025-07-06 14:14:41.365 [main] INFO  c.p.m.SystemMonitoringServiceApplication - Started SystemMonitoringServiceApplication in 5.144 seconds (process running for 5.511)
+2025-07-06 14:20:26.386 [http-nio-8082-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-06 14:20:26.388 [http-nio-8082-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-07-06 14:20:26.412 [http-nio-8082-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 22 ms
+2025-07-06 14:20:26.741 [http-nio-8082-exec-2] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<java.lang.String> com.pulsewatch.monitoring.controller.MetricsController.saveMetrics(com.pulsewatch.monitoring.dto.MetricsRequest) with 3 errors: [Field error in object 'metricsRequest' on field 'timestamp': rejected value [null]; codes [NotNull.metricsRequest.timestamp,NotNull.timestamp,NotNull.java.time.LocalDateTime,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [metricsRequest.timestamp,timestamp]; arguments []; default message [timestamp]]; default message [Timestamp is required]] [Field error in object 'metricsRequest' on field 'host': rejected value [null]; codes [NotBlank.metricsRequest.host,NotBlank.host,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [metricsRequest.host,host]; arguments []; default message [host]]; default message [Host is required]] [Field error in object 'metricsRequest' on field 'metrics': rejected value [null]; codes [NotNull.metricsRequest.metrics,NotNull.metrics,NotNull.java.util.List,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [metricsRequest.metrics,metrics]; arguments []; default message [metrics]]; default message [Metrics are required]] ]
+2025-07-06 14:21:37.429 [http-nio-8082-exec-3] INFO  c.p.m.controller.MetricsController - Received metrics request for host: test-server
+2025-07-06 14:21:37.430 [http-nio-8082-exec-3] INFO  c.p.m.s.impl.MetricsServiceImpl - Saving metrics for host: test-server
+2025-07-06 14:21:37.624 [http-nio-8082-exec-3] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        system_metrics
+        (additional_data, host, metric_name, metric_type, metric_value, timestamp, unit) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-07-06 14:21:37.719 [http-nio-8082-exec-3] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        system_metrics
+        (additional_data, host, metric_name, metric_type, metric_value, timestamp, unit) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-07-06 14:21:37.769 [http-nio-8082-exec-3] INFO  c.p.m.s.impl.MetricsServiceImpl - Saved 2 metrics for host: test-server
+2025-07-06 14:22:42.858 [http-nio-8082-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        sm1_0.id,
+        sm1_0.additional_data,
+        sm1_0.host,
+        sm1_0.metric_name,
+        sm1_0.metric_type,
+        sm1_0.metric_value,
+        sm1_0.timestamp,
+        sm1_0.unit 
+    from
+        system_metrics sm1_0 
+    where
+        sm1_0.metric_type=? 
+        and sm1_0.timestamp>=? 
+    order by
+        sm1_0.timestamp desc
+2025-07-06 14:24:23.087 [http-nio-8082-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        sm1_0.id,
+        sm1_0.additional_data,
+        sm1_0.host,
+        sm1_0.metric_name,
+        sm1_0.metric_type,
+        sm1_0.metric_value,
+        sm1_0.timestamp,
+        sm1_0.unit 
+    from
+        system_metrics sm1_0 
+    where
+        sm1_0.metric_type=? 
+        and sm1_0.timestamp>=? 
+    order by
+        sm1_0.timestamp desc
+2025-07-06 14:25:06.589 [http-nio-8082-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        sm1_0.id,
+        sm1_0.additional_data,
+        sm1_0.host,
+        sm1_0.metric_name,
+        sm1_0.metric_type,
+        sm1_0.metric_value,
+        sm1_0.timestamp,
+        sm1_0.unit 
+    from
+        system_metrics sm1_0 
+    where
+        sm1_0.metric_type=? 
+        and sm1_0.timestamp>=? 
+    order by
+        sm1_0.timestamp desc
+2025-07-06 14:25:38.376 [http-nio-8082-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        sm1_0.id,
+        sm1_0.additional_data,
+        sm1_0.host,
+        sm1_0.metric_name,
+        sm1_0.metric_type,
+        sm1_0.metric_value,
+        sm1_0.timestamp,
+        sm1_0.unit 
+    from
+        system_metrics sm1_0 
+    where
+        sm1_0.metric_type=? 
+        and sm1_0.timestamp>=? 
+    order by
+        sm1_0.timestamp desc
+2025-07-06 14:27:15.343 [http-nio-8082-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        sm1_0.id,
+        sm1_0.additional_data,
+        sm1_0.host,
+        sm1_0.metric_name,
+        sm1_0.metric_type,
+        sm1_0.metric_value,
+        sm1_0.timestamp,
+        sm1_0.unit 
+    from
+        system_metrics sm1_0 
+    where
+        sm1_0.metric_type=? 
+        and sm1_0.timestamp>=? 
+    order by
+        sm1_0.timestamp desc
+2025-07-06 14:27:20.822 [http-nio-8082-exec-6] DEBUG org.hibernate.SQL - 
+    select
+        sm1_0.id,
+        sm1_0.additional_data,
+        sm1_0.host,
+        sm1_0.metric_name,
+        sm1_0.metric_type,
+        sm1_0.metric_value,
+        sm1_0.timestamp,
+        sm1_0.unit 
+    from
+        system_metrics sm1_0 
+    where
+        sm1_0.metric_type=? 
+        and sm1_0.timestamp>=? 
+    order by
+        sm1_0.timestamp desc
+2025-07-06 14:27:33.244 [http-nio-8082-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        sm1_0.id,
+        sm1_0.additional_data,
+        sm1_0.host,
+        sm1_0.metric_name,
+        sm1_0.metric_type,
+        sm1_0.metric_value,
+        sm1_0.timestamp,
+        sm1_0.unit 
+    from
+        system_metrics sm1_0 
+    where
+        sm1_0.metric_type=? 
+        and sm1_0.timestamp>=? 
+    order by
+        sm1_0.timestamp desc
+2025-07-06 14:30:10.628 [http-nio-8082-exec-9] DEBUG org.hibernate.SQL - 
+    select
+        sm1_0.id,
+        sm1_0.additional_data,
+        sm1_0.host,
+        sm1_0.metric_name,
+        sm1_0.metric_type,
+        sm1_0.metric_value,
+        sm1_0.timestamp,
+        sm1_0.unit 
+    from
+        system_metrics sm1_0 
+    where
+        sm1_0.metric_type=? 
+        and sm1_0.timestamp>=? 
+    order by
+        sm1_0.timestamp desc
+2025-07-06 14:30:10.650 [http-nio-8082-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        sm1_0.id,
+        sm1_0.additional_data,
+        sm1_0.host,
+        sm1_0.metric_name,
+        sm1_0.metric_type,
+        sm1_0.metric_value,
+        sm1_0.timestamp,
+        sm1_0.unit 
+    from
+        system_metrics sm1_0 
+    where
+        sm1_0.metric_type=? 
+        and sm1_0.timestamp>=? 
+    order by
+        sm1_0.timestamp desc
+2025-07-06 14:30:10.666 [http-nio-8082-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        sm1_0.id,
+        sm1_0.additional_data,
+        sm1_0.host,
+        sm1_0.metric_name,
+        sm1_0.metric_type,
+        sm1_0.metric_value,
+        sm1_0.timestamp,
+        sm1_0.unit 
+    from
+        system_metrics sm1_0 
+    where
+        sm1_0.metric_type=? 
+        and sm1_0.timestamp>=? 
+    order by
+        sm1_0.timestamp desc
+2025-07-06 14:30:10.688 [http-nio-8082-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        sm1_0.id,
+        sm1_0.additional_data,
+        sm1_0.host,
+        sm1_0.metric_name,
+        sm1_0.metric_type,
+        sm1_0.metric_value,
+        sm1_0.timestamp,
+        sm1_0.unit 
+    from
+        system_metrics sm1_0 
+    where
+        sm1_0.metric_type=? 
+        and sm1_0.timestamp>=? 
+    order by
+        sm1_0.timestamp desc
+2025-07-06 14:30:10.988 [http-nio-8082-exec-9] INFO  c.p.m.controller.MetricsController - Received metrics request for host: demo-server-01
+2025-07-06 14:30:10.989 [http-nio-8082-exec-9] INFO  c.p.m.s.impl.MetricsServiceImpl - Saving metrics for host: demo-server-01
+2025-07-06 14:30:11.005 [http-nio-8082-exec-9] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        system_metrics
+        (additional_data, host, metric_name, metric_type, metric_value, timestamp, unit) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-07-06 14:30:11.011 [http-nio-8082-exec-9] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        system_metrics
+        (additional_data, host, metric_name, metric_type, metric_value, timestamp, unit) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-07-06 14:30:11.018 [http-nio-8082-exec-9] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        system_metrics
+        (additional_data, host, metric_name, metric_type, metric_value, timestamp, unit) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-07-06 14:30:11.021 [http-nio-8082-exec-9] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        system_metrics
+        (additional_data, host, metric_name, metric_type, metric_value, timestamp, unit) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-07-06 14:30:11.026 [http-nio-8082-exec-9] INFO  c.p.m.s.impl.MetricsServiceImpl - Saved 4 metrics for host: demo-server-01
+2025-07-06 14:30:48.126 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-07-06 14:30:48.139 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-07-06 14:30:48.145 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

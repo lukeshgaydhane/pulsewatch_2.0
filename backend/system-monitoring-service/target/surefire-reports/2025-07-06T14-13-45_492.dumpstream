@@ -1,0 +1,5 @@
+# Created at 2025-07-06T14:13:56.887
+Boot Manifest-JAR contains absolute paths in classpath 'D:\Revino Solutions Pvt Ltd\Pulsewatch_2.0\backend\system-monitoring-service\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+'other' has different root
+

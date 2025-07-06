@@ -1,0 +1,11 @@
+com\pulsewatch\monitoring\dto\MetricsResponse.class
+com\pulsewatch\monitoring\dto\MetricsResponse$MetricPoint.class
+com\pulsewatch\monitoring\SystemMonitoringServiceApplication.class
+com\pulsewatch\monitoring\repository\SystemMetricsRepository.class
+com\pulsewatch\monitoring\dto\MetricsRequest$MetricData.class
+com\pulsewatch\monitoring\model\SystemMetrics$MetricType.class
+com\pulsewatch\monitoring\service\MetricsService.class
+com\pulsewatch\monitoring\controller\MetricsController.class
+com\pulsewatch\monitoring\model\SystemMetrics.class
+com\pulsewatch\monitoring\service\impl\MetricsServiceImpl.class
+com\pulsewatch\monitoring\dto\MetricsRequest.class

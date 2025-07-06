@@ -1,0 +1,51 @@
+server:
+  port: ${SERVER_PORT:8083}
+
+spring:
+  application:
+    name: uptime-monitoring-service
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:pulsewatch}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:postgresql}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: ${JPA_HIBERNATE_DDL_AUTO:update}
+    show-sql: ${JPA_SHOW_SQL:true}
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+        jdbc:
+          batch_size: 50
+        order_inserts: true
+        order_updates: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: ${MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE:health,info,metrics}
+  endpoint:
+    health:
+      show-details: ${MANAGEMENT_ENDPOINT_HEALTH_SHOW_DETAILS:always}
+
+logging:
+  level:
+    com.pulsewatch.uptime: ${LOGGING_LEVEL_COM_PULSEWATCH_UPTIME:DEBUG}
+    org.hibernate.SQL: ${LOGGING_LEVEL_ORG_HIBERNATE_SQL:DEBUG}
+    org.springframework: INFO
+    root: INFO
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
+  file:
+    name: logs/uptime-monitoring-service.log
+
+# Uptime monitoring configuration
+uptime:
+  monitoring:
+    interval-ms: ${UPTIME_CHECK_INTERVAL_MS:60000}
+    timeout-ms: ${UPTIME_TIMEOUT_MS:5000}
+    user-agent: ${UPTIME_USER_AGENT:PulseWatch-UptimeMonitor/1.0} 

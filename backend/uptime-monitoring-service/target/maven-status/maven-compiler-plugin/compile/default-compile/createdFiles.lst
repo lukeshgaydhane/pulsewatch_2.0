@@ -1,0 +1,9 @@
+com\pulsewatch\uptime\repository\MonitoredServiceRepository.class
+com\pulsewatch\uptime\dto\RegisterServiceRequest.class
+com\pulsewatch\uptime\service\UptimeMonitorService.class
+com\pulsewatch\uptime\config\RestTemplateConfig.class
+com\pulsewatch\uptime\dto\ServiceStatusResponse.class
+com\pulsewatch\uptime\model\MonitoredService.class
+com\pulsewatch\uptime\UptimeMonitoringServiceApplication.class
+com\pulsewatch\uptime\controller\UptimeController.class
+com\pulsewatch\uptime\model\MonitoredService$ServiceStatus.class

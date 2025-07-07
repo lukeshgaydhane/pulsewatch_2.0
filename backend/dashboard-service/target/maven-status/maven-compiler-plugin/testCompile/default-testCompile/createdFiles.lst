@@ -1,0 +1,3 @@
+com\pulsewatch\dashboard\DashboardServiceApplicationTests.class
+com\pulsewatch\dashboard\service\DatabaseServiceTest.class
+com\pulsewatch\dashboard\controller\DashboardControllerTest.class

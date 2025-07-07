@@ -1,0 +1,14 @@
+com\pulsewatch\dashboard\client\PredictionClient.class
+com\pulsewatch\dashboard\config\FeignConfig.class
+com\pulsewatch\dashboard\controller\DashboardController.class
+com\pulsewatch\dashboard\service\DatabaseService.class
+com\pulsewatch\dashboard\client\ConfigClient.class
+com\pulsewatch\dashboard\config\DatabaseConfig.class
+com\pulsewatch\dashboard\service\impl\DatabaseServiceImpl.class
+com\pulsewatch\dashboard\DashboardServiceApplication.class
+com\pulsewatch\dashboard\service\DashboardService.class
+com\pulsewatch\dashboard\client\AlertClient.class
+com\pulsewatch\dashboard\entity\DashboardMetrics.class
+com\pulsewatch\dashboard\repository\DashboardMetricsRepository.class
+com\pulsewatch\dashboard\config\CustomErrorDecoder.class
+com\pulsewatch\dashboard\service\impl\DashboardServiceImpl.class

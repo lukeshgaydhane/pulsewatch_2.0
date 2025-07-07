@@ -1,0 +1,1170 @@
+2025-07-06 15:07:25.197 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2025-07-06 15:07:25.266 [main] INFO  c.p.u.UptimeMonitoringServiceApplication - Starting UptimeMonitoringServiceApplication using Java 17 with PID 16368 (D:\Revino Solutions Pvt Ltd\Pulsewatch_2.0\backend\uptime-monitoring-service\target\classes started by Admin in D:\Revino Solutions Pvt Ltd\Pulsewatch_2.0\backend\uptime-monitoring-service)
+2025-07-06 15:07:25.266 [main] DEBUG c.p.u.UptimeMonitoringServiceApplication - Running with Spring Boot v3.2.4, Spring v6.1.5
+2025-07-06 15:07:25.268 [main] INFO  c.p.u.UptimeMonitoringServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2025-07-06 15:07:26.346 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-06 15:07:26.420 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 66 ms. Found 1 JPA repository interface.
+2025-07-06 15:07:27.290 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8083 (http)
+2025-07-06 15:07:27.299 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8083"]
+2025-07-06 15:07:27.302 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-07-06 15:07:27.303 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2025-07-06 15:07:27.406 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-07-06 15:07:27.408 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2076 ms
+2025-07-06 15:07:27.693 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-06 15:07:27.764 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2025-07-06 15:07:27.805 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-07-06 15:07:28.021 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-06 15:07:28.055 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-07-06 15:07:28.305 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7286827b
+2025-07-06 15:07:28.306 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-07-06 15:07:28.384 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-06 15:07:29.214 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-06 15:07:29.358 [main] DEBUG org.hibernate.SQL - 
+    create table monitored_services (
+        id uuid not null,
+        created_at timestamp(6) with time zone not null,
+        error_message TEXT,
+        last_checked timestamp(6) with time zone,
+        name varchar(255) not null,
+        response_time_ms bigint,
+        status varchar(255) not null check (status in ('UP','DOWN','UNKNOWN')),
+        updated_at timestamp(6) with time zone,
+        url varchar(255) not null,
+        primary key (id)
+    )
+2025-07-06 15:07:29.398 [main] DEBUG org.hibernate.SQL - 
+    create index idx_status 
+       on monitored_services (status)
+2025-07-06 15:07:29.403 [main] DEBUG org.hibernate.SQL - 
+    create index idx_last_checked 
+       on monitored_services (last_checked)
+2025-07-06 15:07:29.410 [main] DEBUG org.hibernate.SQL - 
+    create index idx_name 
+       on monitored_services (name)
+2025-07-06 15:07:29.414 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-06 15:07:29.679 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-07-06 15:07:30.111 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-06 15:07:30.662 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 3 endpoint(s) beneath base path '/actuator'
+2025-07-06 15:07:30.738 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8083"]
+2025-07-06 15:07:30.765 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8083 (http) with context path ''
+2025-07-06 15:07:30.789 [main] INFO  c.p.u.UptimeMonitoringServiceApplication - Started UptimeMonitoringServiceApplication in 9.166 seconds (process running for 10.184)
+2025-07-06 15:07:30.805 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Starting scheduled health check for all monitored services
+2025-07-06 15:07:30.966 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        ms1_0.id,
+        ms1_0.created_at,
+        ms1_0.error_message,
+        ms1_0.last_checked,
+        ms1_0.name,
+        ms1_0.response_time_ms,
+        ms1_0.status,
+        ms1_0.updated_at,
+        ms1_0.url 
+    from
+        monitored_services ms1_0
+2025-07-06 15:07:30.988 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - No services to monitor
+2025-07-06 15:07:48.757 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-07-06 15:07:48.759 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-07-06 15:07:48.762 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-07-06 15:11:50.549 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2025-07-06 15:11:50.714 [main] INFO  c.p.u.UptimeMonitoringServiceApplication - Starting UptimeMonitoringServiceApplication using Java 17 with PID 22452 (D:\Revino Solutions Pvt Ltd\Pulsewatch_2.0\backend\uptime-monitoring-service\target\classes started by Admin in D:\Revino Solutions Pvt Ltd\Pulsewatch_2.0\backend\uptime-monitoring-service)
+2025-07-06 15:11:50.716 [main] DEBUG c.p.u.UptimeMonitoringServiceApplication - Running with Spring Boot v3.2.4, Spring v6.1.5
+2025-07-06 15:11:50.718 [main] INFO  c.p.u.UptimeMonitoringServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2025-07-06 15:11:53.391 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-06 15:11:53.514 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 112 ms. Found 1 JPA repository interface.
+2025-07-06 15:11:54.966 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8083 (http)
+2025-07-06 15:11:54.982 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8083"]
+2025-07-06 15:11:54.987 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-07-06 15:11:54.988 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2025-07-06 15:11:55.194 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-07-06 15:11:55.198 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4305 ms
+2025-07-06 15:11:55.937 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-06 15:11:56.129 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2025-07-06 15:11:56.225 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-07-06 15:11:56.698 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-06 15:11:56.751 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-07-06 15:11:57.442 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1dfe5dd1
+2025-07-06 15:11:57.444 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-07-06 15:11:57.641 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-06 15:11:59.037 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-06 15:11:59.232 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-06 15:11:59.634 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-07-06 15:12:00.450 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-06 15:12:01.398 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 3 endpoint(s) beneath base path '/actuator'
+2025-07-06 15:12:01.564 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8083"]
+2025-07-06 15:12:01.634 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8083 (http) with context path ''
+2025-07-06 15:12:01.681 [main] INFO  c.p.u.UptimeMonitoringServiceApplication - Started UptimeMonitoringServiceApplication in 12.088 seconds (process running for 13.023)
+2025-07-06 15:12:01.698 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Starting scheduled health check for all monitored services
+2025-07-06 15:12:01.888 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        ms1_0.id,
+        ms1_0.created_at,
+        ms1_0.error_message,
+        ms1_0.last_checked,
+        ms1_0.name,
+        ms1_0.response_time_ms,
+        ms1_0.status,
+        ms1_0.updated_at,
+        ms1_0.url 
+    from
+        monitored_services ms1_0
+2025-07-06 15:12:01.906 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - No services to monitor
+2025-07-06 15:13:01.685 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Starting scheduled health check for all monitored services
+2025-07-06 15:13:01.690 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        ms1_0.id,
+        ms1_0.created_at,
+        ms1_0.error_message,
+        ms1_0.last_checked,
+        ms1_0.name,
+        ms1_0.response_time_ms,
+        ms1_0.status,
+        ms1_0.updated_at,
+        ms1_0.url 
+    from
+        monitored_services ms1_0
+2025-07-06 15:13:01.693 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - No services to monitor
+2025-07-06 15:14:01.689 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Starting scheduled health check for all monitored services
+2025-07-06 15:14:01.694 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        ms1_0.id,
+        ms1_0.created_at,
+        ms1_0.error_message,
+        ms1_0.last_checked,
+        ms1_0.name,
+        ms1_0.response_time_ms,
+        ms1_0.status,
+        ms1_0.updated_at,
+        ms1_0.url 
+    from
+        monitored_services ms1_0
+2025-07-06 15:14:01.697 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - No services to monitor
+2025-07-06 15:15:01.691 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Starting scheduled health check for all monitored services
+2025-07-06 15:15:01.701 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        ms1_0.id,
+        ms1_0.created_at,
+        ms1_0.error_message,
+        ms1_0.last_checked,
+        ms1_0.name,
+        ms1_0.response_time_ms,
+        ms1_0.status,
+        ms1_0.updated_at,
+        ms1_0.url 
+    from
+        monitored_services ms1_0
+2025-07-06 15:15:01.709 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - No services to monitor
+2025-07-06 15:16:01.689 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Starting scheduled health check for all monitored services
+2025-07-06 15:16:01.699 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        ms1_0.id,
+        ms1_0.created_at,
+        ms1_0.error_message,
+        ms1_0.last_checked,
+        ms1_0.name,
+        ms1_0.response_time_ms,
+        ms1_0.status,
+        ms1_0.updated_at,
+        ms1_0.url 
+    from
+        monitored_services ms1_0
+2025-07-06 15:16:01.706 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - No services to monitor
+2025-07-06 15:16:13.645 [http-nio-8083-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-06 15:16:13.646 [http-nio-8083-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-07-06 15:16:13.652 [http-nio-8083-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+2025-07-06 15:16:14.037 [http-nio-8083-exec-2] INFO  c.p.u.controller.UptimeController - Received service registration request: User Management Service at http://localhost:8081/actuator/health
+2025-07-06 15:16:14.038 [http-nio-8083-exec-2] INFO  c.p.u.service.UptimeMonitorService - Registering new service: User Management Service at http://localhost:8081/actuator/health
+2025-07-06 15:16:14.192 [http-nio-8083-exec-2] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        monitored_services
+        (created_at, error_message, last_checked, name, response_time_ms, status, updated_at, url, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?)
+2025-07-06 15:16:14.246 [http-nio-8083-exec-2] INFO  c.p.u.service.UptimeMonitorService - Service registered with ID: 9299bb3a-fde7-44a2-a81a-68e71722c95b
+2025-07-06 15:16:14.250 [http-nio-8083-exec-2] INFO  c.p.u.controller.UptimeController - Service registered successfully with ID: 9299bb3a-fde7-44a2-a81a-68e71722c95b
+2025-07-06 15:17:01.688 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Starting scheduled health check for all monitored services
+2025-07-06 15:17:01.696 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        ms1_0.id,
+        ms1_0.created_at,
+        ms1_0.error_message,
+        ms1_0.last_checked,
+        ms1_0.name,
+        ms1_0.response_time_ms,
+        ms1_0.status,
+        ms1_0.updated_at,
+        ms1_0.url 
+    from
+        monitored_services ms1_0
+2025-07-06 15:17:01.726 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Checking 1 services
+2025-07-06 15:17:01.884 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        ms1_0.id,
+        ms1_0.created_at,
+        ms1_0.error_message,
+        ms1_0.last_checked,
+        ms1_0.name,
+        ms1_0.response_time_ms,
+        ms1_0.status,
+        ms1_0.updated_at,
+        ms1_0.url 
+    from
+        monitored_services ms1_0 
+    where
+        ms1_0.id=?
+2025-07-06 15:17:01.925 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        monitored_services 
+    set
+        created_at=?,
+        error_message=?,
+        last_checked=?,
+        name=?,
+        response_time_ms=?,
+        status=?,
+        updated_at=?,
+        url=? 
+    where
+        id=?
+2025-07-06 15:17:01.946 [scheduling-1] WARN  c.p.u.service.UptimeMonitorService - Service User Management Service is DOWN - Connection timeout
+2025-07-06 15:17:01.947 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Completed health check for 1 services
+2025-07-06 15:18:01.685 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Starting scheduled health check for all monitored services
+2025-07-06 15:18:01.691 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        ms1_0.id,
+        ms1_0.created_at,
+        ms1_0.error_message,
+        ms1_0.last_checked,
+        ms1_0.name,
+        ms1_0.response_time_ms,
+        ms1_0.status,
+        ms1_0.updated_at,
+        ms1_0.url 
+    from
+        monitored_services ms1_0
+2025-07-06 15:18:01.694 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Checking 1 services
+2025-07-06 15:18:01.717 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        ms1_0.id,
+        ms1_0.created_at,
+        ms1_0.error_message,
+        ms1_0.last_checked,
+        ms1_0.name,
+        ms1_0.response_time_ms,
+        ms1_0.status,
+        ms1_0.updated_at,
+        ms1_0.url 
+    from
+        monitored_services ms1_0 
+    where
+        ms1_0.id=?
+2025-07-06 15:18:01.722 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        monitored_services 
+    set
+        created_at=?,
+        error_message=?,
+        last_checked=?,
+        name=?,
+        response_time_ms=?,
+        status=?,
+        updated_at=?,
+        url=? 
+    where
+        id=?
+2025-07-06 15:18:01.727 [scheduling-1] WARN  c.p.u.service.UptimeMonitorService - Service User Management Service is DOWN - Connection timeout
+2025-07-06 15:18:01.729 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Completed health check for 1 services
+2025-07-06 15:19:01.680 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Starting scheduled health check for all monitored services
+2025-07-06 15:19:01.691 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        ms1_0.id,
+        ms1_0.created_at,
+        ms1_0.error_message,
+        ms1_0.last_checked,
+        ms1_0.name,
+        ms1_0.response_time_ms,
+        ms1_0.status,
+        ms1_0.updated_at,
+        ms1_0.url 
+    from
+        monitored_services ms1_0
+2025-07-06 15:19:01.698 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Checking 1 services
+2025-07-06 15:19:01.729 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        ms1_0.id,
+        ms1_0.created_at,
+        ms1_0.error_message,
+        ms1_0.last_checked,
+        ms1_0.name,
+        ms1_0.response_time_ms,
+        ms1_0.status,
+        ms1_0.updated_at,
+        ms1_0.url 
+    from
+        monitored_services ms1_0 
+    where
+        ms1_0.id=?
+2025-07-06 15:19:01.739 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        monitored_services 
+    set
+        created_at=?,
+        error_message=?,
+        last_checked=?,
+        name=?,
+        response_time_ms=?,
+        status=?,
+        updated_at=?,
+        url=? 
+    where
+        id=?
+2025-07-06 15:19:01.747 [scheduling-1] WARN  c.p.u.service.UptimeMonitorService - Service User Management Service is DOWN - Connection timeout
+2025-07-06 15:19:01.749 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Completed health check for 1 services
+2025-07-06 15:20:01.687 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Starting scheduled health check for all monitored services
+2025-07-06 15:20:01.694 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        ms1_0.id,
+        ms1_0.created_at,
+        ms1_0.error_message,
+        ms1_0.last_checked,
+        ms1_0.name,
+        ms1_0.response_time_ms,
+        ms1_0.status,
+        ms1_0.updated_at,
+        ms1_0.url 
+    from
+        monitored_services ms1_0
+2025-07-06 15:20:01.702 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Checking 1 services
+2025-07-06 15:20:01.711 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        ms1_0.id,
+        ms1_0.created_at,
+        ms1_0.error_message,
+        ms1_0.last_checked,
+        ms1_0.name,
+        ms1_0.response_time_ms,
+        ms1_0.status,
+        ms1_0.updated_at,
+        ms1_0.url 
+    from
+        monitored_services ms1_0 
+    where
+        ms1_0.id=?
+2025-07-06 15:20:01.720 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        monitored_services 
+    set
+        created_at=?,
+        error_message=?,
+        last_checked=?,
+        name=?,
+        response_time_ms=?,
+        status=?,
+        updated_at=?,
+        url=? 
+    where
+        id=?
+2025-07-06 15:20:01.727 [scheduling-1] WARN  c.p.u.service.UptimeMonitorService - Service User Management Service is DOWN - Connection timeout
+2025-07-06 15:20:01.728 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Completed health check for 1 services
+2025-07-06 15:20:20.867 [http-nio-8083-exec-5] INFO  c.p.u.controller.UptimeController - Requesting status for service ID: 9299bb3a-fde7-44a2-a81a-68e71722c95b
+2025-07-06 15:20:20.873 [http-nio-8083-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        ms1_0.id,
+        ms1_0.created_at,
+        ms1_0.error_message,
+        ms1_0.last_checked,
+        ms1_0.name,
+        ms1_0.response_time_ms,
+        ms1_0.status,
+        ms1_0.updated_at,
+        ms1_0.url 
+    from
+        monitored_services ms1_0 
+    where
+        ms1_0.id=?
+2025-07-06 15:21:01.686 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Starting scheduled health check for all monitored services
+2025-07-06 15:21:01.694 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        ms1_0.id,
+        ms1_0.created_at,
+        ms1_0.error_message,
+        ms1_0.last_checked,
+        ms1_0.name,
+        ms1_0.response_time_ms,
+        ms1_0.status,
+        ms1_0.updated_at,
+        ms1_0.url 
+    from
+        monitored_services ms1_0
+2025-07-06 15:21:01.699 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Checking 1 services
+2025-07-06 15:21:01.719 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        ms1_0.id,
+        ms1_0.created_at,
+        ms1_0.error_message,
+        ms1_0.last_checked,
+        ms1_0.name,
+        ms1_0.response_time_ms,
+        ms1_0.status,
+        ms1_0.updated_at,
+        ms1_0.url 
+    from
+        monitored_services ms1_0 
+    where
+        ms1_0.id=?
+2025-07-06 15:21:01.727 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        monitored_services 
+    set
+        created_at=?,
+        error_message=?,
+        last_checked=?,
+        name=?,
+        response_time_ms=?,
+        status=?,
+        updated_at=?,
+        url=? 
+    where
+        id=?
+2025-07-06 15:21:01.740 [scheduling-1] WARN  c.p.u.service.UptimeMonitorService - Service User Management Service is DOWN - Connection timeout
+2025-07-06 15:21:01.741 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Completed health check for 1 services
+2025-07-06 15:22:01.680 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Starting scheduled health check for all monitored services
+2025-07-06 15:22:01.691 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        ms1_0.id,
+        ms1_0.created_at,
+        ms1_0.error_message,
+        ms1_0.last_checked,
+        ms1_0.name,
+        ms1_0.response_time_ms,
+        ms1_0.status,
+        ms1_0.updated_at,
+        ms1_0.url 
+    from
+        monitored_services ms1_0
+2025-07-06 15:22:01.697 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Checking 1 services
+2025-07-06 15:22:01.730 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        ms1_0.id,
+        ms1_0.created_at,
+        ms1_0.error_message,
+        ms1_0.last_checked,
+        ms1_0.name,
+        ms1_0.response_time_ms,
+        ms1_0.status,
+        ms1_0.updated_at,
+        ms1_0.url 
+    from
+        monitored_services ms1_0 
+    where
+        ms1_0.id=?
+2025-07-06 15:22:01.743 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        monitored_services 
+    set
+        created_at=?,
+        error_message=?,
+        last_checked=?,
+        name=?,
+        response_time_ms=?,
+        status=?,
+        updated_at=?,
+        url=? 
+    where
+        id=?
+2025-07-06 15:22:01.755 [scheduling-1] WARN  c.p.u.service.UptimeMonitorService - Service User Management Service is DOWN - Connection timeout
+2025-07-06 15:22:01.758 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Completed health check for 1 services
+2025-07-06 15:22:04.714 [http-nio-8083-exec-8] INFO  c.p.u.controller.UptimeController - Requesting all monitored services
+2025-07-06 15:22:04.718 [http-nio-8083-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        ms1_0.id,
+        ms1_0.created_at,
+        ms1_0.error_message,
+        ms1_0.last_checked,
+        ms1_0.name,
+        ms1_0.response_time_ms,
+        ms1_0.status,
+        ms1_0.updated_at,
+        ms1_0.url 
+    from
+        monitored_services ms1_0
+2025-07-06 15:22:26.395 [http-nio-8083-exec-9] INFO  c.p.u.controller.UptimeController - Received service registration request: User Management Service at http://localhost:8081/actuator/health
+2025-07-06 15:22:26.396 [http-nio-8083-exec-9] INFO  c.p.u.service.UptimeMonitorService - Registering new service: User Management Service at http://localhost:8081/actuator/health
+2025-07-06 15:22:26.399 [http-nio-8083-exec-9] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        monitored_services
+        (created_at, error_message, last_checked, name, response_time_ms, status, updated_at, url, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?)
+2025-07-06 15:22:26.405 [http-nio-8083-exec-9] INFO  c.p.u.service.UptimeMonitorService - Service registered with ID: b67a809c-7ec1-44ea-93aa-b4971b6bd5be
+2025-07-06 15:22:26.406 [http-nio-8083-exec-9] INFO  c.p.u.controller.UptimeController - Service registered successfully with ID: b67a809c-7ec1-44ea-93aa-b4971b6bd5be
+2025-07-06 15:22:32.823 [http-nio-8083-exec-10] INFO  c.p.u.controller.UptimeController - Requesting all monitored services
+2025-07-06 15:22:32.828 [http-nio-8083-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        ms1_0.id,
+        ms1_0.created_at,
+        ms1_0.error_message,
+        ms1_0.last_checked,
+        ms1_0.name,
+        ms1_0.response_time_ms,
+        ms1_0.status,
+        ms1_0.updated_at,
+        ms1_0.url 
+    from
+        monitored_services ms1_0
+2025-07-06 15:23:01.685 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Starting scheduled health check for all monitored services
+2025-07-06 15:23:01.698 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        ms1_0.id,
+        ms1_0.created_at,
+        ms1_0.error_message,
+        ms1_0.last_checked,
+        ms1_0.name,
+        ms1_0.response_time_ms,
+        ms1_0.status,
+        ms1_0.updated_at,
+        ms1_0.url 
+    from
+        monitored_services ms1_0
+2025-07-06 15:23:01.706 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Checking 2 services
+2025-07-06 15:23:01.749 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        ms1_0.id,
+        ms1_0.created_at,
+        ms1_0.error_message,
+        ms1_0.last_checked,
+        ms1_0.name,
+        ms1_0.response_time_ms,
+        ms1_0.status,
+        ms1_0.updated_at,
+        ms1_0.url 
+    from
+        monitored_services ms1_0 
+    where
+        ms1_0.id=?
+2025-07-06 15:23:01.757 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        monitored_services 
+    set
+        created_at=?,
+        error_message=?,
+        last_checked=?,
+        name=?,
+        response_time_ms=?,
+        status=?,
+        updated_at=?,
+        url=? 
+    where
+        id=?
+2025-07-06 15:23:01.765 [scheduling-1] WARN  c.p.u.service.UptimeMonitorService - Service User Management Service is DOWN - Connection timeout
+2025-07-06 15:23:01.771 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        ms1_0.id,
+        ms1_0.created_at,
+        ms1_0.error_message,
+        ms1_0.last_checked,
+        ms1_0.name,
+        ms1_0.response_time_ms,
+        ms1_0.status,
+        ms1_0.updated_at,
+        ms1_0.url 
+    from
+        monitored_services ms1_0 
+    where
+        ms1_0.id=?
+2025-07-06 15:23:01.780 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        monitored_services 
+    set
+        created_at=?,
+        error_message=?,
+        last_checked=?,
+        name=?,
+        response_time_ms=?,
+        status=?,
+        updated_at=?,
+        url=? 
+    where
+        id=?
+2025-07-06 15:23:01.787 [scheduling-1] WARN  c.p.u.service.UptimeMonitorService - Service User Management Service is DOWN - Connection timeout
+2025-07-06 15:23:01.788 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Completed health check for 2 services
+2025-07-06 15:24:01.678 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Starting scheduled health check for all monitored services
+2025-07-06 15:24:01.690 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        ms1_0.id,
+        ms1_0.created_at,
+        ms1_0.error_message,
+        ms1_0.last_checked,
+        ms1_0.name,
+        ms1_0.response_time_ms,
+        ms1_0.status,
+        ms1_0.updated_at,
+        ms1_0.url 
+    from
+        monitored_services ms1_0
+2025-07-06 15:24:01.697 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Checking 2 services
+2025-07-06 15:24:01.727 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        ms1_0.id,
+        ms1_0.created_at,
+        ms1_0.error_message,
+        ms1_0.last_checked,
+        ms1_0.name,
+        ms1_0.response_time_ms,
+        ms1_0.status,
+        ms1_0.updated_at,
+        ms1_0.url 
+    from
+        monitored_services ms1_0 
+    where
+        ms1_0.id=?
+2025-07-06 15:24:01.734 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        monitored_services 
+    set
+        created_at=?,
+        error_message=?,
+        last_checked=?,
+        name=?,
+        response_time_ms=?,
+        status=?,
+        updated_at=?,
+        url=? 
+    where
+        id=?
+2025-07-06 15:24:01.742 [scheduling-1] WARN  c.p.u.service.UptimeMonitorService - Service User Management Service is DOWN - Connection timeout
+2025-07-06 15:24:01.753 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        ms1_0.id,
+        ms1_0.created_at,
+        ms1_0.error_message,
+        ms1_0.last_checked,
+        ms1_0.name,
+        ms1_0.response_time_ms,
+        ms1_0.status,
+        ms1_0.updated_at,
+        ms1_0.url 
+    from
+        monitored_services ms1_0 
+    where
+        ms1_0.id=?
+2025-07-06 15:24:01.760 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        monitored_services 
+    set
+        created_at=?,
+        error_message=?,
+        last_checked=?,
+        name=?,
+        response_time_ms=?,
+        status=?,
+        updated_at=?,
+        url=? 
+    where
+        id=?
+2025-07-06 15:24:01.767 [scheduling-1] WARN  c.p.u.service.UptimeMonitorService - Service User Management Service is DOWN - Connection timeout
+2025-07-06 15:24:01.769 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Completed health check for 2 services
+2025-07-06 15:24:31.050 [http-nio-8083-exec-4] INFO  c.p.u.controller.UptimeController - Requesting deletion of service ID: 9299bb3a-fde7-44a2-a81a-68e71722c95b
+2025-07-06 15:24:31.051 [http-nio-8083-exec-4] INFO  c.p.u.service.UptimeMonitorService - Deleting service with ID: 9299bb3a-fde7-44a2-a81a-68e71722c95b
+2025-07-06 15:24:31.058 [http-nio-8083-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        ms1_0.id,
+        ms1_0.created_at,
+        ms1_0.error_message,
+        ms1_0.last_checked,
+        ms1_0.name,
+        ms1_0.response_time_ms,
+        ms1_0.status,
+        ms1_0.updated_at,
+        ms1_0.url 
+    from
+        monitored_services ms1_0 
+    where
+        ms1_0.id=?
+2025-07-06 15:24:31.082 [http-nio-8083-exec-4] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        monitored_services 
+    where
+        id=?
+2025-07-06 15:24:31.093 [http-nio-8083-exec-4] INFO  c.p.u.controller.UptimeController - Service deleted successfully: 9299bb3a-fde7-44a2-a81a-68e71722c95b
+2025-07-06 15:24:42.942 [http-nio-8083-exec-3] INFO  c.p.u.controller.UptimeController - Requesting status for service ID: 9299bb3a-fde7-44a2-a81a-68e71722c95b
+2025-07-06 15:24:42.946 [http-nio-8083-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        ms1_0.id,
+        ms1_0.created_at,
+        ms1_0.error_message,
+        ms1_0.last_checked,
+        ms1_0.name,
+        ms1_0.response_time_ms,
+        ms1_0.status,
+        ms1_0.updated_at,
+        ms1_0.url 
+    from
+        monitored_services ms1_0 
+    where
+        ms1_0.id=?
+2025-07-06 15:24:42.950 [http-nio-8083-exec-3] ERROR c.p.u.controller.UptimeController - Service not found with ID: 9299bb3a-fde7-44a2-a81a-68e71722c95b
+2025-07-06 15:24:48.688 [http-nio-8083-exec-5] INFO  c.p.u.controller.UptimeController - Requesting all monitored services
+2025-07-06 15:24:48.694 [http-nio-8083-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        ms1_0.id,
+        ms1_0.created_at,
+        ms1_0.error_message,
+        ms1_0.last_checked,
+        ms1_0.name,
+        ms1_0.response_time_ms,
+        ms1_0.status,
+        ms1_0.updated_at,
+        ms1_0.url 
+    from
+        monitored_services ms1_0
+2025-07-06 15:25:01.687 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Starting scheduled health check for all monitored services
+2025-07-06 15:25:01.693 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        ms1_0.id,
+        ms1_0.created_at,
+        ms1_0.error_message,
+        ms1_0.last_checked,
+        ms1_0.name,
+        ms1_0.response_time_ms,
+        ms1_0.status,
+        ms1_0.updated_at,
+        ms1_0.url 
+    from
+        monitored_services ms1_0
+2025-07-06 15:25:01.703 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Checking 1 services
+2025-07-06 15:25:01.738 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        ms1_0.id,
+        ms1_0.created_at,
+        ms1_0.error_message,
+        ms1_0.last_checked,
+        ms1_0.name,
+        ms1_0.response_time_ms,
+        ms1_0.status,
+        ms1_0.updated_at,
+        ms1_0.url 
+    from
+        monitored_services ms1_0 
+    where
+        ms1_0.id=?
+2025-07-06 15:25:01.746 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        monitored_services 
+    set
+        created_at=?,
+        error_message=?,
+        last_checked=?,
+        name=?,
+        response_time_ms=?,
+        status=?,
+        updated_at=?,
+        url=? 
+    where
+        id=?
+2025-07-06 15:25:01.755 [scheduling-1] WARN  c.p.u.service.UptimeMonitorService - Service User Management Service is DOWN - Connection timeout
+2025-07-06 15:25:01.756 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Completed health check for 1 services
+2025-07-06 15:26:01.675 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Starting scheduled health check for all monitored services
+2025-07-06 15:26:01.684 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        ms1_0.id,
+        ms1_0.created_at,
+        ms1_0.error_message,
+        ms1_0.last_checked,
+        ms1_0.name,
+        ms1_0.response_time_ms,
+        ms1_0.status,
+        ms1_0.updated_at,
+        ms1_0.url 
+    from
+        monitored_services ms1_0
+2025-07-06 15:26:01.692 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Checking 1 services
+2025-07-06 15:26:01.723 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        ms1_0.id,
+        ms1_0.created_at,
+        ms1_0.error_message,
+        ms1_0.last_checked,
+        ms1_0.name,
+        ms1_0.response_time_ms,
+        ms1_0.status,
+        ms1_0.updated_at,
+        ms1_0.url 
+    from
+        monitored_services ms1_0 
+    where
+        ms1_0.id=?
+2025-07-06 15:26:01.730 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        monitored_services 
+    set
+        created_at=?,
+        error_message=?,
+        last_checked=?,
+        name=?,
+        response_time_ms=?,
+        status=?,
+        updated_at=?,
+        url=? 
+    where
+        id=?
+2025-07-06 15:26:01.738 [scheduling-1] WARN  c.p.u.service.UptimeMonitorService - Service User Management Service is DOWN - Connection timeout
+2025-07-06 15:26:01.739 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Completed health check for 1 services
+2025-07-06 15:26:48.749 [http-nio-8083-exec-8] INFO  c.p.u.controller.UptimeController - Manual health check requested for service ID: b67a809c-7ec1-44ea-93aa-b4971b6bd5be
+2025-07-06 15:26:48.752 [http-nio-8083-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        ms1_0.id,
+        ms1_0.created_at,
+        ms1_0.error_message,
+        ms1_0.last_checked,
+        ms1_0.name,
+        ms1_0.response_time_ms,
+        ms1_0.status,
+        ms1_0.updated_at,
+        ms1_0.url 
+    from
+        monitored_services ms1_0 
+    where
+        ms1_0.id=?
+2025-07-06 15:27:01.684 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Starting scheduled health check for all monitored services
+2025-07-06 15:27:01.688 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        ms1_0.id,
+        ms1_0.created_at,
+        ms1_0.error_message,
+        ms1_0.last_checked,
+        ms1_0.name,
+        ms1_0.response_time_ms,
+        ms1_0.status,
+        ms1_0.updated_at,
+        ms1_0.url 
+    from
+        monitored_services ms1_0
+2025-07-06 15:27:01.691 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Checking 1 services
+2025-07-06 15:27:01.696 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        ms1_0.id,
+        ms1_0.created_at,
+        ms1_0.error_message,
+        ms1_0.last_checked,
+        ms1_0.name,
+        ms1_0.response_time_ms,
+        ms1_0.status,
+        ms1_0.updated_at,
+        ms1_0.url 
+    from
+        monitored_services ms1_0 
+    where
+        ms1_0.id=?
+2025-07-06 15:27:01.700 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        monitored_services 
+    set
+        created_at=?,
+        error_message=?,
+        last_checked=?,
+        name=?,
+        response_time_ms=?,
+        status=?,
+        updated_at=?,
+        url=? 
+    where
+        id=?
+2025-07-06 15:27:01.704 [scheduling-1] WARN  c.p.u.service.UptimeMonitorService - Service User Management Service is DOWN - Connection timeout
+2025-07-06 15:27:01.704 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Completed health check for 1 services
+2025-07-06 15:27:07.280 [http-nio-8083-exec-9] INFO  c.p.u.controller.UptimeController - Requesting all monitored services
+2025-07-06 15:27:07.286 [http-nio-8083-exec-9] DEBUG org.hibernate.SQL - 
+    select
+        ms1_0.id,
+        ms1_0.created_at,
+        ms1_0.error_message,
+        ms1_0.last_checked,
+        ms1_0.name,
+        ms1_0.response_time_ms,
+        ms1_0.status,
+        ms1_0.updated_at,
+        ms1_0.url 
+    from
+        monitored_services ms1_0
+2025-07-06 15:28:01.689 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Starting scheduled health check for all monitored services
+2025-07-06 15:28:01.697 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        ms1_0.id,
+        ms1_0.created_at,
+        ms1_0.error_message,
+        ms1_0.last_checked,
+        ms1_0.name,
+        ms1_0.response_time_ms,
+        ms1_0.status,
+        ms1_0.updated_at,
+        ms1_0.url 
+    from
+        monitored_services ms1_0
+2025-07-06 15:28:01.703 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Checking 1 services
+2025-07-06 15:28:01.759 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        ms1_0.id,
+        ms1_0.created_at,
+        ms1_0.error_message,
+        ms1_0.last_checked,
+        ms1_0.name,
+        ms1_0.response_time_ms,
+        ms1_0.status,
+        ms1_0.updated_at,
+        ms1_0.url 
+    from
+        monitored_services ms1_0 
+    where
+        ms1_0.id=?
+2025-07-06 15:28:01.765 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        monitored_services 
+    set
+        created_at=?,
+        error_message=?,
+        last_checked=?,
+        name=?,
+        response_time_ms=?,
+        status=?,
+        updated_at=?,
+        url=? 
+    where
+        id=?
+2025-07-06 15:28:01.772 [scheduling-1] WARN  c.p.u.service.UptimeMonitorService - Service User Management Service is DOWN - Connection timeout
+2025-07-06 15:28:01.773 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Completed health check for 1 services
+2025-07-06 15:29:01.683 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Starting scheduled health check for all monitored services
+2025-07-06 15:29:01.693 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        ms1_0.id,
+        ms1_0.created_at,
+        ms1_0.error_message,
+        ms1_0.last_checked,
+        ms1_0.name,
+        ms1_0.response_time_ms,
+        ms1_0.status,
+        ms1_0.updated_at,
+        ms1_0.url 
+    from
+        monitored_services ms1_0
+2025-07-06 15:29:01.700 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Checking 1 services
+2025-07-06 15:29:01.733 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        ms1_0.id,
+        ms1_0.created_at,
+        ms1_0.error_message,
+        ms1_0.last_checked,
+        ms1_0.name,
+        ms1_0.response_time_ms,
+        ms1_0.status,
+        ms1_0.updated_at,
+        ms1_0.url 
+    from
+        monitored_services ms1_0 
+    where
+        ms1_0.id=?
+2025-07-06 15:29:01.741 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        monitored_services 
+    set
+        created_at=?,
+        error_message=?,
+        last_checked=?,
+        name=?,
+        response_time_ms=?,
+        status=?,
+        updated_at=?,
+        url=? 
+    where
+        id=?
+2025-07-06 15:29:01.749 [scheduling-1] WARN  c.p.u.service.UptimeMonitorService - Service User Management Service is DOWN - Connection timeout
+2025-07-06 15:29:01.750 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Completed health check for 1 services
+2025-07-06 15:30:01.707 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Starting scheduled health check for all monitored services
+2025-07-06 15:30:01.710 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        ms1_0.id,
+        ms1_0.created_at,
+        ms1_0.error_message,
+        ms1_0.last_checked,
+        ms1_0.name,
+        ms1_0.response_time_ms,
+        ms1_0.status,
+        ms1_0.updated_at,
+        ms1_0.url 
+    from
+        monitored_services ms1_0
+2025-07-06 15:30:01.713 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Checking 1 services
+2025-07-06 15:30:01.886 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        ms1_0.id,
+        ms1_0.created_at,
+        ms1_0.error_message,
+        ms1_0.last_checked,
+        ms1_0.name,
+        ms1_0.response_time_ms,
+        ms1_0.status,
+        ms1_0.updated_at,
+        ms1_0.url 
+    from
+        monitored_services ms1_0 
+    where
+        ms1_0.id=?
+2025-07-06 15:30:02.009 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        monitored_services 
+    set
+        created_at=?,
+        error_message=?,
+        last_checked=?,
+        name=?,
+        response_time_ms=?,
+        status=?,
+        updated_at=?,
+        url=? 
+    where
+        id=?
+2025-07-06 15:30:02.016 [scheduling-1] WARN  c.p.u.service.UptimeMonitorService - Service User Management Service is DOWN - Connection timeout
+2025-07-06 15:30:02.016 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Completed health check for 1 services
+2025-07-06 15:31:01.678 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Starting scheduled health check for all monitored services
+2025-07-06 15:31:01.686 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        ms1_0.id,
+        ms1_0.created_at,
+        ms1_0.error_message,
+        ms1_0.last_checked,
+        ms1_0.name,
+        ms1_0.response_time_ms,
+        ms1_0.status,
+        ms1_0.updated_at,
+        ms1_0.url 
+    from
+        monitored_services ms1_0
+2025-07-06 15:31:01.692 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Checking 1 services
+2025-07-06 15:31:01.726 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        ms1_0.id,
+        ms1_0.created_at,
+        ms1_0.error_message,
+        ms1_0.last_checked,
+        ms1_0.name,
+        ms1_0.response_time_ms,
+        ms1_0.status,
+        ms1_0.updated_at,
+        ms1_0.url 
+    from
+        monitored_services ms1_0 
+    where
+        ms1_0.id=?
+2025-07-06 15:31:01.734 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        monitored_services 
+    set
+        created_at=?,
+        error_message=?,
+        last_checked=?,
+        name=?,
+        response_time_ms=?,
+        status=?,
+        updated_at=?,
+        url=? 
+    where
+        id=?
+2025-07-06 15:31:01.741 [scheduling-1] WARN  c.p.u.service.UptimeMonitorService - Service User Management Service is DOWN - Connection timeout
+2025-07-06 15:31:01.742 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Completed health check for 1 services
+2025-07-06 15:32:01.680 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Starting scheduled health check for all monitored services
+2025-07-06 15:32:01.685 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        ms1_0.id,
+        ms1_0.created_at,
+        ms1_0.error_message,
+        ms1_0.last_checked,
+        ms1_0.name,
+        ms1_0.response_time_ms,
+        ms1_0.status,
+        ms1_0.updated_at,
+        ms1_0.url 
+    from
+        monitored_services ms1_0
+2025-07-06 15:32:01.688 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Checking 1 services
+2025-07-06 15:32:01.695 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        ms1_0.id,
+        ms1_0.created_at,
+        ms1_0.error_message,
+        ms1_0.last_checked,
+        ms1_0.name,
+        ms1_0.response_time_ms,
+        ms1_0.status,
+        ms1_0.updated_at,
+        ms1_0.url 
+    from
+        monitored_services ms1_0 
+    where
+        ms1_0.id=?
+2025-07-06 15:32:01.708 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        monitored_services 
+    set
+        created_at=?,
+        error_message=?,
+        last_checked=?,
+        name=?,
+        response_time_ms=?,
+        status=?,
+        updated_at=?,
+        url=? 
+    where
+        id=?
+2025-07-06 15:32:01.736 [scheduling-1] WARN  c.p.u.service.UptimeMonitorService - Service User Management Service is DOWN - Connection timeout
+2025-07-06 15:32:01.750 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Completed health check for 1 services
+2025-07-06 15:33:01.682 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Starting scheduled health check for all monitored services
+2025-07-06 15:33:01.699 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        ms1_0.id,
+        ms1_0.created_at,
+        ms1_0.error_message,
+        ms1_0.last_checked,
+        ms1_0.name,
+        ms1_0.response_time_ms,
+        ms1_0.status,
+        ms1_0.updated_at,
+        ms1_0.url 
+    from
+        monitored_services ms1_0
+2025-07-06 15:33:01.707 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Checking 1 services
+2025-07-06 15:33:01.719 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        ms1_0.id,
+        ms1_0.created_at,
+        ms1_0.error_message,
+        ms1_0.last_checked,
+        ms1_0.name,
+        ms1_0.response_time_ms,
+        ms1_0.status,
+        ms1_0.updated_at,
+        ms1_0.url 
+    from
+        monitored_services ms1_0 
+    where
+        ms1_0.id=?
+2025-07-06 15:33:01.737 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        monitored_services 
+    set
+        created_at=?,
+        error_message=?,
+        last_checked=?,
+        name=?,
+        response_time_ms=?,
+        status=?,
+        updated_at=?,
+        url=? 
+    where
+        id=?
+2025-07-06 15:33:01.766 [scheduling-1] WARN  c.p.u.service.UptimeMonitorService - Service User Management Service is DOWN - Connection timeout
+2025-07-06 15:33:01.767 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Completed health check for 1 services
+2025-07-06 15:33:08.686 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-07-06 15:33:08.750 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-07-06 15:33:08.799 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

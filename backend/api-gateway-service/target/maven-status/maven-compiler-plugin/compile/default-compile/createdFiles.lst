@@ -1,0 +1,4 @@
+com\pulsewatch\gateway\filter\RequestLoggingFilter.class
+com\pulsewatch\gateway\filter\ResponseHeaderFilter.class
+com\pulsewatch\gateway\config\SecurityConfig.class
+com\pulsewatch\gateway\ApiGatewayApplication.class

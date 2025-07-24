@@ -787,3 +787,1620 @@
         id=?
 2025-07-07 15:16:20.120 [scheduling-1] WARN  c.p.u.service.UptimeMonitorService - Service User Management Service is DOWN - 403 : [no body]
 2025-07-07 15:16:20.120 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Completed health check for 1 services
+2025-07-07 15:17:20.071 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Starting scheduled health check for all monitored services
+2025-07-07 15:17:20.076 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0
+2025-07-07 15:17:20.078 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Checking 1 services
+2025-07-07 15:17:20.085 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0 
+    where
+        m1_0.id=?
+2025-07-07 15:17:20.086 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        monitored_services 
+    set
+        created_at=?,
+        error_message=?,
+        last_checked=?,
+        name=?,
+        response_time_ms=?,
+        status=?,
+        updated_at=?,
+        url=? 
+    where
+        id=?
+2025-07-07 15:17:20.089 [scheduling-1] WARN  c.p.u.service.UptimeMonitorService - Service User Management Service is DOWN - 403 : [no body]
+2025-07-07 15:17:20.089 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Completed health check for 1 services
+2025-07-07 15:18:20.070 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Starting scheduled health check for all monitored services
+2025-07-07 15:18:20.074 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0
+2025-07-07 15:18:20.076 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Checking 1 services
+2025-07-07 15:18:20.088 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0 
+    where
+        m1_0.id=?
+2025-07-07 15:18:20.090 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        monitored_services 
+    set
+        created_at=?,
+        error_message=?,
+        last_checked=?,
+        name=?,
+        response_time_ms=?,
+        status=?,
+        updated_at=?,
+        url=? 
+    where
+        id=?
+2025-07-07 15:18:20.092 [scheduling-1] WARN  c.p.u.service.UptimeMonitorService - Service User Management Service is DOWN - 403 : [no body]
+2025-07-07 15:18:20.092 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Completed health check for 1 services
+2025-07-07 15:19:20.068 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Starting scheduled health check for all monitored services
+2025-07-07 15:19:20.076 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0
+2025-07-07 15:19:20.082 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Checking 1 services
+2025-07-07 15:19:20.106 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0 
+    where
+        m1_0.id=?
+2025-07-07 15:19:20.113 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        monitored_services 
+    set
+        created_at=?,
+        error_message=?,
+        last_checked=?,
+        name=?,
+        response_time_ms=?,
+        status=?,
+        updated_at=?,
+        url=? 
+    where
+        id=?
+2025-07-07 15:19:20.119 [scheduling-1] WARN  c.p.u.service.UptimeMonitorService - Service User Management Service is DOWN - 403 : [no body]
+2025-07-07 15:19:20.120 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Completed health check for 1 services
+2025-07-07 15:20:20.072 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Starting scheduled health check for all monitored services
+2025-07-07 15:20:20.089 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0
+2025-07-07 15:20:20.095 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Checking 1 services
+2025-07-07 15:20:20.117 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0 
+    where
+        m1_0.id=?
+2025-07-07 15:20:20.124 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        monitored_services 
+    set
+        created_at=?,
+        error_message=?,
+        last_checked=?,
+        name=?,
+        response_time_ms=?,
+        status=?,
+        updated_at=?,
+        url=? 
+    where
+        id=?
+2025-07-07 15:20:20.130 [scheduling-1] WARN  c.p.u.service.UptimeMonitorService - Service User Management Service is DOWN - 403 : [no body]
+2025-07-07 15:20:20.132 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Completed health check for 1 services
+2025-07-07 15:21:19.404 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-07-07 15:21:20.078 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Starting scheduled health check for all monitored services
+2025-07-07 15:21:20.086 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0
+2025-07-07 15:21:20.092 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Checking 1 services
+2025-07-07 15:21:20.122 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0 
+    where
+        m1_0.id=?
+2025-07-07 15:21:20.131 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        monitored_services 
+    set
+        created_at=?,
+        error_message=?,
+        last_checked=?,
+        name=?,
+        response_time_ms=?,
+        status=?,
+        updated_at=?,
+        url=? 
+    where
+        id=?
+2025-07-07 15:21:20.140 [scheduling-1] WARN  c.p.u.service.UptimeMonitorService - Service User Management Service is DOWN - 403 : [no body]
+2025-07-07 15:21:20.143 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Completed health check for 1 services
+2025-07-07 15:22:20.064 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Starting scheduled health check for all monitored services
+2025-07-07 15:22:20.088 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0
+2025-07-07 15:22:20.096 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Checking 1 services
+2025-07-07 15:22:20.128 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0 
+    where
+        m1_0.id=?
+2025-07-07 15:22:20.137 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        monitored_services 
+    set
+        created_at=?,
+        error_message=?,
+        last_checked=?,
+        name=?,
+        response_time_ms=?,
+        status=?,
+        updated_at=?,
+        url=? 
+    where
+        id=?
+2025-07-07 15:22:20.146 [scheduling-1] WARN  c.p.u.service.UptimeMonitorService - Service User Management Service is DOWN - 403 : [no body]
+2025-07-07 15:22:20.147 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Completed health check for 1 services
+2025-07-07 15:23:20.073 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Starting scheduled health check for all monitored services
+2025-07-07 15:23:20.080 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0
+2025-07-07 15:23:20.085 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Checking 1 services
+2025-07-07 15:23:20.105 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0 
+    where
+        m1_0.id=?
+2025-07-07 15:23:20.111 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        monitored_services 
+    set
+        created_at=?,
+        error_message=?,
+        last_checked=?,
+        name=?,
+        response_time_ms=?,
+        status=?,
+        updated_at=?,
+        url=? 
+    where
+        id=?
+2025-07-07 15:23:20.118 [scheduling-1] WARN  c.p.u.service.UptimeMonitorService - Service User Management Service is DOWN - 403 : [no body]
+2025-07-07 15:23:20.119 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Completed health check for 1 services
+2025-07-07 15:24:20.075 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Starting scheduled health check for all monitored services
+2025-07-07 15:24:20.095 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0
+2025-07-07 15:24:20.100 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Checking 1 services
+2025-07-07 15:24:20.126 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0 
+    where
+        m1_0.id=?
+2025-07-07 15:24:20.134 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        monitored_services 
+    set
+        created_at=?,
+        error_message=?,
+        last_checked=?,
+        name=?,
+        response_time_ms=?,
+        status=?,
+        updated_at=?,
+        url=? 
+    where
+        id=?
+2025-07-07 15:24:20.140 [scheduling-1] WARN  c.p.u.service.UptimeMonitorService - Service User Management Service is DOWN - 403 : [no body]
+2025-07-07 15:24:20.141 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Completed health check for 1 services
+2025-07-07 15:25:20.071 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Starting scheduled health check for all monitored services
+2025-07-07 15:25:20.092 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0
+2025-07-07 15:25:20.098 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Checking 1 services
+2025-07-07 15:25:20.117 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0 
+    where
+        m1_0.id=?
+2025-07-07 15:25:20.124 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        monitored_services 
+    set
+        created_at=?,
+        error_message=?,
+        last_checked=?,
+        name=?,
+        response_time_ms=?,
+        status=?,
+        updated_at=?,
+        url=? 
+    where
+        id=?
+2025-07-07 15:25:20.130 [scheduling-1] WARN  c.p.u.service.UptimeMonitorService - Service User Management Service is DOWN - 403 : [no body]
+2025-07-07 15:25:20.130 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Completed health check for 1 services
+2025-07-07 15:26:19.421 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-07-07 15:26:20.078 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Starting scheduled health check for all monitored services
+2025-07-07 15:26:20.086 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0
+2025-07-07 15:26:20.092 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Checking 1 services
+2025-07-07 15:26:20.114 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0 
+    where
+        m1_0.id=?
+2025-07-07 15:26:20.122 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        monitored_services 
+    set
+        created_at=?,
+        error_message=?,
+        last_checked=?,
+        name=?,
+        response_time_ms=?,
+        status=?,
+        updated_at=?,
+        url=? 
+    where
+        id=?
+2025-07-07 15:26:20.128 [scheduling-1] WARN  c.p.u.service.UptimeMonitorService - Service User Management Service is DOWN - 403 : [no body]
+2025-07-07 15:26:20.129 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Completed health check for 1 services
+2025-07-07 15:27:20.068 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Starting scheduled health check for all monitored services
+2025-07-07 15:27:20.086 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0
+2025-07-07 15:27:20.092 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Checking 1 services
+2025-07-07 15:27:20.113 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0 
+    where
+        m1_0.id=?
+2025-07-07 15:27:20.120 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        monitored_services 
+    set
+        created_at=?,
+        error_message=?,
+        last_checked=?,
+        name=?,
+        response_time_ms=?,
+        status=?,
+        updated_at=?,
+        url=? 
+    where
+        id=?
+2025-07-07 15:27:20.126 [scheduling-1] WARN  c.p.u.service.UptimeMonitorService - Service User Management Service is DOWN - 403 : [no body]
+2025-07-07 15:27:20.127 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Completed health check for 1 services
+2025-07-07 15:28:20.067 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Starting scheduled health check for all monitored services
+2025-07-07 15:28:20.086 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0
+2025-07-07 15:28:20.092 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Checking 1 services
+2025-07-07 15:28:20.112 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0 
+    where
+        m1_0.id=?
+2025-07-07 15:28:20.120 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        monitored_services 
+    set
+        created_at=?,
+        error_message=?,
+        last_checked=?,
+        name=?,
+        response_time_ms=?,
+        status=?,
+        updated_at=?,
+        url=? 
+    where
+        id=?
+2025-07-07 15:28:20.127 [scheduling-1] WARN  c.p.u.service.UptimeMonitorService - Service User Management Service is DOWN - 403 : [no body]
+2025-07-07 15:28:20.128 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Completed health check for 1 services
+2025-07-07 15:29:20.078 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Starting scheduled health check for all monitored services
+2025-07-07 15:29:20.085 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0
+2025-07-07 15:29:20.091 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Checking 1 services
+2025-07-07 15:29:20.113 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0 
+    where
+        m1_0.id=?
+2025-07-07 15:29:20.120 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        monitored_services 
+    set
+        created_at=?,
+        error_message=?,
+        last_checked=?,
+        name=?,
+        response_time_ms=?,
+        status=?,
+        updated_at=?,
+        url=? 
+    where
+        id=?
+2025-07-07 15:29:20.126 [scheduling-1] WARN  c.p.u.service.UptimeMonitorService - Service User Management Service is DOWN - 403 : [no body]
+2025-07-07 15:29:20.127 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Completed health check for 1 services
+2025-07-07 15:30:20.064 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Starting scheduled health check for all monitored services
+2025-07-07 15:30:20.073 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0
+2025-07-07 15:30:20.079 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Checking 1 services
+2025-07-07 15:30:20.101 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0 
+    where
+        m1_0.id=?
+2025-07-07 15:30:20.108 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        monitored_services 
+    set
+        created_at=?,
+        error_message=?,
+        last_checked=?,
+        name=?,
+        response_time_ms=?,
+        status=?,
+        updated_at=?,
+        url=? 
+    where
+        id=?
+2025-07-07 15:30:20.116 [scheduling-1] WARN  c.p.u.service.UptimeMonitorService - Service User Management Service is DOWN - 403 : [no body]
+2025-07-07 15:30:20.117 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Completed health check for 1 services
+2025-07-07 15:31:19.432 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-07-07 15:31:20.065 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Starting scheduled health check for all monitored services
+2025-07-07 15:31:20.083 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0
+2025-07-07 15:31:20.119 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Checking 1 services
+2025-07-07 15:31:20.145 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0 
+    where
+        m1_0.id=?
+2025-07-07 15:31:20.158 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        monitored_services 
+    set
+        created_at=?,
+        error_message=?,
+        last_checked=?,
+        name=?,
+        response_time_ms=?,
+        status=?,
+        updated_at=?,
+        url=? 
+    where
+        id=?
+2025-07-07 15:31:20.169 [scheduling-1] WARN  c.p.u.service.UptimeMonitorService - Service User Management Service is DOWN - 403 : [no body]
+2025-07-07 15:31:20.170 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Completed health check for 1 services
+2025-07-07 15:32:20.071 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Starting scheduled health check for all monitored services
+2025-07-07 15:32:20.083 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0
+2025-07-07 15:32:20.093 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Checking 1 services
+2025-07-07 15:32:20.116 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0 
+    where
+        m1_0.id=?
+2025-07-07 15:32:20.126 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        monitored_services 
+    set
+        created_at=?,
+        error_message=?,
+        last_checked=?,
+        name=?,
+        response_time_ms=?,
+        status=?,
+        updated_at=?,
+        url=? 
+    where
+        id=?
+2025-07-07 15:32:20.138 [scheduling-1] WARN  c.p.u.service.UptimeMonitorService - Service User Management Service is DOWN - 403 : [no body]
+2025-07-07 15:32:20.139 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Completed health check for 1 services
+2025-07-07 15:33:20.063 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Starting scheduled health check for all monitored services
+2025-07-07 15:33:20.083 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0
+2025-07-07 15:33:20.091 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Checking 1 services
+2025-07-07 15:33:20.116 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0 
+    where
+        m1_0.id=?
+2025-07-07 15:33:20.127 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        monitored_services 
+    set
+        created_at=?,
+        error_message=?,
+        last_checked=?,
+        name=?,
+        response_time_ms=?,
+        status=?,
+        updated_at=?,
+        url=? 
+    where
+        id=?
+2025-07-07 15:33:20.133 [scheduling-1] WARN  c.p.u.service.UptimeMonitorService - Service User Management Service is DOWN - 403 : [no body]
+2025-07-07 15:33:20.134 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Completed health check for 1 services
+2025-07-07 15:34:20.065 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Starting scheduled health check for all monitored services
+2025-07-07 15:34:20.086 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0
+2025-07-07 15:34:20.094 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Checking 1 services
+2025-07-07 15:34:20.118 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0 
+    where
+        m1_0.id=?
+2025-07-07 15:34:20.125 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        monitored_services 
+    set
+        created_at=?,
+        error_message=?,
+        last_checked=?,
+        name=?,
+        response_time_ms=?,
+        status=?,
+        updated_at=?,
+        url=? 
+    where
+        id=?
+2025-07-07 15:34:20.132 [scheduling-1] WARN  c.p.u.service.UptimeMonitorService - Service User Management Service is DOWN - 403 : [no body]
+2025-07-07 15:34:20.133 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Completed health check for 1 services
+2025-07-07 15:35:20.064 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Starting scheduled health check for all monitored services
+2025-07-07 15:35:20.075 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0
+2025-07-07 15:35:20.083 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Checking 1 services
+2025-07-07 15:35:20.118 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0 
+    where
+        m1_0.id=?
+2025-07-07 15:35:20.130 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        monitored_services 
+    set
+        created_at=?,
+        error_message=?,
+        last_checked=?,
+        name=?,
+        response_time_ms=?,
+        status=?,
+        updated_at=?,
+        url=? 
+    where
+        id=?
+2025-07-07 15:35:20.139 [scheduling-1] WARN  c.p.u.service.UptimeMonitorService - Service User Management Service is DOWN - 403 : [no body]
+2025-07-07 15:35:20.140 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Completed health check for 1 services
+2025-07-07 15:36:19.457 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-07-07 15:36:20.066 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Starting scheduled health check for all monitored services
+2025-07-07 15:36:20.074 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0
+2025-07-07 15:36:20.080 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Checking 1 services
+2025-07-07 15:36:20.119 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0 
+    where
+        m1_0.id=?
+2025-07-07 15:36:20.127 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        monitored_services 
+    set
+        created_at=?,
+        error_message=?,
+        last_checked=?,
+        name=?,
+        response_time_ms=?,
+        status=?,
+        updated_at=?,
+        url=? 
+    where
+        id=?
+2025-07-07 15:36:20.135 [scheduling-1] WARN  c.p.u.service.UptimeMonitorService - Service User Management Service is DOWN - 403 : [no body]
+2025-07-07 15:36:20.136 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Completed health check for 1 services
+2025-07-07 15:37:20.074 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Starting scheduled health check for all monitored services
+2025-07-07 15:37:20.124 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0
+2025-07-07 15:37:20.130 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Checking 1 services
+2025-07-07 15:37:20.178 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0 
+    where
+        m1_0.id=?
+2025-07-07 15:37:20.189 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        monitored_services 
+    set
+        created_at=?,
+        error_message=?,
+        last_checked=?,
+        name=?,
+        response_time_ms=?,
+        status=?,
+        updated_at=?,
+        url=? 
+    where
+        id=?
+2025-07-07 15:37:20.196 [scheduling-1] WARN  c.p.u.service.UptimeMonitorService - Service User Management Service is DOWN - 403 : [no body]
+2025-07-07 15:37:20.197 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Completed health check for 1 services
+2025-07-07 15:38:20.070 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Starting scheduled health check for all monitored services
+2025-07-07 15:38:20.077 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0
+2025-07-07 15:38:20.086 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Checking 1 services
+2025-07-07 15:38:20.112 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0 
+    where
+        m1_0.id=?
+2025-07-07 15:38:20.122 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        monitored_services 
+    set
+        created_at=?,
+        error_message=?,
+        last_checked=?,
+        name=?,
+        response_time_ms=?,
+        status=?,
+        updated_at=?,
+        url=? 
+    where
+        id=?
+2025-07-07 15:38:20.131 [scheduling-1] WARN  c.p.u.service.UptimeMonitorService - Service User Management Service is DOWN - 403 : [no body]
+2025-07-07 15:38:20.134 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Completed health check for 1 services
+2025-07-07 15:39:20.074 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Starting scheduled health check for all monitored services
+2025-07-07 15:39:20.084 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0
+2025-07-07 15:39:20.089 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Checking 1 services
+2025-07-07 15:39:20.136 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0 
+    where
+        m1_0.id=?
+2025-07-07 15:39:20.144 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        monitored_services 
+    set
+        created_at=?,
+        error_message=?,
+        last_checked=?,
+        name=?,
+        response_time_ms=?,
+        status=?,
+        updated_at=?,
+        url=? 
+    where
+        id=?
+2025-07-07 15:39:20.154 [scheduling-1] WARN  c.p.u.service.UptimeMonitorService - Service User Management Service is DOWN - 403 : [no body]
+2025-07-07 15:39:20.155 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Completed health check for 1 services
+2025-07-07 15:40:20.074 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Starting scheduled health check for all monitored services
+2025-07-07 15:40:20.091 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0
+2025-07-07 15:40:20.097 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Checking 1 services
+2025-07-07 15:40:20.121 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0 
+    where
+        m1_0.id=?
+2025-07-07 15:40:20.130 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        monitored_services 
+    set
+        created_at=?,
+        error_message=?,
+        last_checked=?,
+        name=?,
+        response_time_ms=?,
+        status=?,
+        updated_at=?,
+        url=? 
+    where
+        id=?
+2025-07-07 15:40:20.136 [scheduling-1] WARN  c.p.u.service.UptimeMonitorService - Service User Management Service is DOWN - 403 : [no body]
+2025-07-07 15:40:20.137 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Completed health check for 1 services
+2025-07-07 15:41:19.466 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-07-07 15:41:20.076 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Starting scheduled health check for all monitored services
+2025-07-07 15:41:20.081 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0
+2025-07-07 15:41:20.085 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Checking 1 services
+2025-07-07 15:41:20.100 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0 
+    where
+        m1_0.id=?
+2025-07-07 15:41:20.104 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        monitored_services 
+    set
+        created_at=?,
+        error_message=?,
+        last_checked=?,
+        name=?,
+        response_time_ms=?,
+        status=?,
+        updated_at=?,
+        url=? 
+    where
+        id=?
+2025-07-07 15:41:20.109 [scheduling-1] WARN  c.p.u.service.UptimeMonitorService - Service User Management Service is DOWN - 403 : [no body]
+2025-07-07 15:41:20.109 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Completed health check for 1 services
+2025-07-07 15:42:20.076 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Starting scheduled health check for all monitored services
+2025-07-07 15:42:20.084 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0
+2025-07-07 15:42:20.094 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Checking 1 services
+2025-07-07 15:42:20.108 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0 
+    where
+        m1_0.id=?
+2025-07-07 15:42:20.113 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        monitored_services 
+    set
+        created_at=?,
+        error_message=?,
+        last_checked=?,
+        name=?,
+        response_time_ms=?,
+        status=?,
+        updated_at=?,
+        url=? 
+    where
+        id=?
+2025-07-07 15:42:20.118 [scheduling-1] WARN  c.p.u.service.UptimeMonitorService - Service User Management Service is DOWN - 403 : [no body]
+2025-07-07 15:42:20.118 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Completed health check for 1 services
+2025-07-07 15:43:20.073 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Starting scheduled health check for all monitored services
+2025-07-07 15:43:20.079 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0
+2025-07-07 15:43:20.095 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Checking 1 services
+2025-07-07 15:43:20.121 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0 
+    where
+        m1_0.id=?
+2025-07-07 15:43:20.128 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        monitored_services 
+    set
+        created_at=?,
+        error_message=?,
+        last_checked=?,
+        name=?,
+        response_time_ms=?,
+        status=?,
+        updated_at=?,
+        url=? 
+    where
+        id=?
+2025-07-07 15:43:20.141 [scheduling-1] WARN  c.p.u.service.UptimeMonitorService - Service User Management Service is DOWN - 403 : [no body]
+2025-07-07 15:43:20.142 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Completed health check for 1 services
+2025-07-07 15:44:20.067 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Starting scheduled health check for all monitored services
+2025-07-07 15:44:20.075 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0
+2025-07-07 15:44:20.079 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Checking 1 services
+2025-07-07 15:44:20.106 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0 
+    where
+        m1_0.id=?
+2025-07-07 15:44:20.114 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        monitored_services 
+    set
+        created_at=?,
+        error_message=?,
+        last_checked=?,
+        name=?,
+        response_time_ms=?,
+        status=?,
+        updated_at=?,
+        url=? 
+    where
+        id=?
+2025-07-07 15:44:20.123 [scheduling-1] WARN  c.p.u.service.UptimeMonitorService - Service User Management Service is DOWN - 403 : [no body]
+2025-07-07 15:44:20.125 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Completed health check for 1 services
+2025-07-07 15:45:20.063 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Starting scheduled health check for all monitored services
+2025-07-07 15:45:20.067 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0
+2025-07-07 15:45:20.069 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Checking 1 services
+2025-07-07 15:45:20.080 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0 
+    where
+        m1_0.id=?
+2025-07-07 15:45:20.084 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        monitored_services 
+    set
+        created_at=?,
+        error_message=?,
+        last_checked=?,
+        name=?,
+        response_time_ms=?,
+        status=?,
+        updated_at=?,
+        url=? 
+    where
+        id=?
+2025-07-07 15:45:20.086 [scheduling-1] WARN  c.p.u.service.UptimeMonitorService - Service User Management Service is DOWN - 403 : [no body]
+2025-07-07 15:45:20.087 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Completed health check for 1 services
+2025-07-07 15:46:19.469 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-07-07 15:46:20.065 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Starting scheduled health check for all monitored services
+2025-07-07 15:46:20.069 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0
+2025-07-07 15:46:20.072 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Checking 1 services
+2025-07-07 15:46:20.087 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0 
+    where
+        m1_0.id=?
+2025-07-07 15:46:20.090 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        monitored_services 
+    set
+        created_at=?,
+        error_message=?,
+        last_checked=?,
+        name=?,
+        response_time_ms=?,
+        status=?,
+        updated_at=?,
+        url=? 
+    where
+        id=?
+2025-07-07 15:46:20.093 [scheduling-1] WARN  c.p.u.service.UptimeMonitorService - Service User Management Service is DOWN - 403 : [no body]
+2025-07-07 15:46:20.094 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Completed health check for 1 services
+2025-07-07 15:47:20.065 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Starting scheduled health check for all monitored services
+2025-07-07 15:47:20.073 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0
+2025-07-07 15:47:20.079 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Checking 1 services
+2025-07-07 15:47:20.101 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0 
+    where
+        m1_0.id=?
+2025-07-07 15:47:20.109 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        monitored_services 
+    set
+        created_at=?,
+        error_message=?,
+        last_checked=?,
+        name=?,
+        response_time_ms=?,
+        status=?,
+        updated_at=?,
+        url=? 
+    where
+        id=?
+2025-07-07 15:47:20.117 [scheduling-1] WARN  c.p.u.service.UptimeMonitorService - Service User Management Service is DOWN - 403 : [no body]
+2025-07-07 15:47:20.118 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Completed health check for 1 services
+2025-07-07 15:48:20.070 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Starting scheduled health check for all monitored services
+2025-07-07 15:48:20.081 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0
+2025-07-07 15:48:20.086 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Checking 1 services
+2025-07-07 15:48:20.122 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0 
+    where
+        m1_0.id=?
+2025-07-07 15:48:20.132 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        monitored_services 
+    set
+        created_at=?,
+        error_message=?,
+        last_checked=?,
+        name=?,
+        response_time_ms=?,
+        status=?,
+        updated_at=?,
+        url=? 
+    where
+        id=?
+2025-07-07 15:48:20.139 [scheduling-1] WARN  c.p.u.service.UptimeMonitorService - Service User Management Service is DOWN - 403 : [no body]
+2025-07-07 15:48:20.139 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Completed health check for 1 services
+2025-07-07 15:49:20.075 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Starting scheduled health check for all monitored services
+2025-07-07 15:49:20.083 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0
+2025-07-07 15:49:20.090 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Checking 1 services
+2025-07-07 15:49:20.118 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0 
+    where
+        m1_0.id=?
+2025-07-07 15:49:20.132 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        monitored_services 
+    set
+        created_at=?,
+        error_message=?,
+        last_checked=?,
+        name=?,
+        response_time_ms=?,
+        status=?,
+        updated_at=?,
+        url=? 
+    where
+        id=?
+2025-07-07 15:49:20.140 [scheduling-1] WARN  c.p.u.service.UptimeMonitorService - Service User Management Service is DOWN - 403 : [no body]
+2025-07-07 15:49:20.142 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Completed health check for 1 services
+2025-07-07 15:50:20.065 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Starting scheduled health check for all monitored services
+2025-07-07 15:50:20.074 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0
+2025-07-07 15:50:20.079 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Checking 1 services
+2025-07-07 15:50:20.111 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0 
+    where
+        m1_0.id=?
+2025-07-07 15:50:20.128 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        monitored_services 
+    set
+        created_at=?,
+        error_message=?,
+        last_checked=?,
+        name=?,
+        response_time_ms=?,
+        status=?,
+        updated_at=?,
+        url=? 
+    where
+        id=?
+2025-07-07 15:50:20.139 [scheduling-1] WARN  c.p.u.service.UptimeMonitorService - Service User Management Service is DOWN - 403 : [no body]
+2025-07-07 15:50:20.140 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Completed health check for 1 services
+2025-07-07 15:51:19.482 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-07-07 15:51:20.071 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Starting scheduled health check for all monitored services
+2025-07-07 15:51:20.076 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0
+2025-07-07 15:51:20.080 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Checking 1 services
+2025-07-07 15:51:20.103 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.error_message,
+        m1_0.last_checked,
+        m1_0.name,
+        m1_0.response_time_ms,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.url 
+    from
+        monitored_services m1_0 
+    where
+        m1_0.id=?
+2025-07-07 15:51:20.109 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        monitored_services 
+    set
+        created_at=?,
+        error_message=?,
+        last_checked=?,
+        name=?,
+        response_time_ms=?,
+        status=?,
+        updated_at=?,
+        url=? 
+    where
+        id=?
+2025-07-07 15:51:20.114 [scheduling-1] WARN  c.p.u.service.UptimeMonitorService - Service User Management Service is DOWN - 403 : [no body]
+2025-07-07 15:51:20.115 [scheduling-1] INFO  c.p.u.service.UptimeMonitorService - Completed health check for 1 services
